@@ -439,7 +439,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       }>;
     publishedAt: Schema.Attribute.DateTime;
     sections: Schema.Attribute.DynamicZone<
-      ['shared.section-with-image-on-left', 'shared.section']
+      ['shared.section', 'shared.section-with-image']
     > &
       Schema.Attribute.Required;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;

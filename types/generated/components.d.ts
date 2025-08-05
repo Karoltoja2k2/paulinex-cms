@@ -34,17 +34,17 @@ export interface SharedSection extends Struct.ComponentSchema {
   };
 }
 
-export interface SharedSectionWithImageOnLeft extends Struct.ComponentSchema {
-  collectionName: 'components_shared_section_with_image_on_lefts';
+export interface SharedSectionWithImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_section_with_images';
   info: {
     displayName: 'SectionWithImage';
   };
   attributes: {
     content: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    image: Schema.Attribute.Component<'shared.img', false> &
+    image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     imagePosition: Schema.Attribute.Enumeration<
-      ['LeftSide', 'RightSide', 'UnderTitle']
+      ['left', 'right', 'above', 'under']
     > &
       Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -57,7 +57,7 @@ declare module '@strapi/strapi' {
       'shared.img': SharedImg;
       'shared.rich-text': SharedRichText;
       'shared.section': SharedSection;
-      'shared.section-with-image-on-left': SharedSectionWithImageOnLeft;
+      'shared.section-with-image': SharedSectionWithImage;
     }
   }
 }

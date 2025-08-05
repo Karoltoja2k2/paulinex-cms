@@ -49,8 +49,8 @@
     "sections": {
       "type": "dynamiczone",
       "components": [
-        "shared.section-with-image-on-left",
-        "shared.section"
+        "shared.section",
+        "shared.section-with-image"
       ],
       "required": true
     }

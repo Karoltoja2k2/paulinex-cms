@@ -1,5 +1,5 @@
 {
-  "collectionName": "components_shared_section_with_image_on_lefts",
+  "collectionName": "components_shared_section_with_images",
   "info": {
     "displayName": "SectionWithImage"
   },
@@ -13,20 +13,24 @@
       "type": "blocks",
       "required": true
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
     "imagePosition": {
       "type": "enumeration",
       "required": true,
       "enum": [
-        "LeftSide",
-        "RightSide",
-        "UnderTitle"
+        "left",
+        "right",
+        "above",
+        "under"
       ]
-    },
-    "image": {
-      "type": "component",
-      "component": "shared.img",
-      "repeatable": false,
-      "required": true
     }
   },
   "config": {}
