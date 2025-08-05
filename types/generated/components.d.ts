@@ -1,16 +1,5 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedImg extends Struct.ComponentSchema {
-  collectionName: 'components_shared_imgs';
-  info: {
-    displayName: 'Img';
-  };
-  attributes: {
-    alt: Schema.Attribute.String & Schema.Attribute.Required;
-    img: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
-  };
-}
-
 export interface SharedRichText extends Struct.ComponentSchema {
   collectionName: 'components_shared_rich_texts';
   info: {
@@ -54,7 +43,6 @@ export interface SharedSectionWithImage extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.img': SharedImg;
       'shared.rich-text': SharedRichText;
       'shared.section': SharedSection;
       'shared.section-with-image': SharedSectionWithImage;

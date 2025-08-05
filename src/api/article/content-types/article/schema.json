@@ -34,11 +34,14 @@
       "type": "string",
       "required": true
     },
-    "coverImg": {
-      "type": "component",
-      "component": "shared.img",
-      "repeatable": false,
-      "required": true
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     },
     "headerSection": {
       "type": "component",
