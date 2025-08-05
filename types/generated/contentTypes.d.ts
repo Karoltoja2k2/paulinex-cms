@@ -412,18 +412,14 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    blocks: Schema.Attribute.DynamicZone<
-      ['shared.section-with-image-on-left', 'shared.section']
-    > &
-      Schema.Attribute.Required;
-    CoverImg: Schema.Attribute.Component<'shared.img', false> &
+    coverImg: Schema.Attribute.Component<'shared.img', false> &
       Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    DecorationDescription: Schema.Attribute.String & Schema.Attribute.Required;
-    DecorationTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    HeaderSection: Schema.Attribute.Component<'shared.section', false> &
+    decorationDescription: Schema.Attribute.String & Schema.Attribute.Required;
+    decorationTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    headerSection: Schema.Attribute.Component<'shared.section', false> &
       Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -431,17 +427,21 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       'api::article.article'
     > &
       Schema.Attribute.Private;
-    MetaDescription: Schema.Attribute.String &
+    metaDescription: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 159;
       }>;
-    MetaTitle: Schema.Attribute.String &
+    metaTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 60;
       }>;
     publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      ['shared.section-with-image-on-left', 'shared.section']
+    > &
+      Schema.Attribute.Required;
     slug: Schema.Attribute.UID & Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

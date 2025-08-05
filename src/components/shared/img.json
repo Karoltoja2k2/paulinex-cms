@@ -5,7 +5,7 @@
   },
   "options": {},
   "attributes": {
-    "Img": {
+    "img": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -14,7 +14,7 @@
         "files"
       ]
     },
-    "Alt": {
+    "alt": {
       "type": "string",
       "required": true
     }

@@ -6,8 +6,8 @@ export interface SharedImg extends Struct.ComponentSchema {
     displayName: 'Img';
   };
   attributes: {
-    Alt: Schema.Attribute.String & Schema.Attribute.Required;
-    Img: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
+    alt: Schema.Attribute.String & Schema.Attribute.Required;
+    img: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
   };
 }
 
@@ -29,8 +29,8 @@ export interface SharedSection extends Struct.ComponentSchema {
     displayName: 'Section';
   };
   attributes: {
-    Content: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -40,14 +40,14 @@ export interface SharedSectionWithImageOnLeft extends Struct.ComponentSchema {
     displayName: 'SectionWithImage';
   };
   attributes: {
-    Content: Schema.Attribute.Blocks & Schema.Attribute.Required;
-    Image: Schema.Attribute.Component<'shared.img', false> &
+    content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    image: Schema.Attribute.Component<'shared.img', false> &
       Schema.Attribute.Required;
-    ImagePlace: Schema.Attribute.Enumeration<
+    imagePosition: Schema.Attribute.Enumeration<
       ['LeftSide', 'RightSide', 'UnderTitle']
     > &
       Schema.Attribute.Required;
-    Title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 

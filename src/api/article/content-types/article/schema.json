@@ -16,37 +16,37 @@
       "type": "uid",
       "required": true
     },
-    "DecorationTitle": {
+    "decorationTitle": {
       "type": "string",
       "required": true
     },
-    "MetaTitle": {
+    "metaTitle": {
       "type": "string",
       "maxLength": 60,
       "required": true
     },
-    "MetaDescription": {
+    "metaDescription": {
       "type": "string",
       "maxLength": 159,
       "required": true
     },
-    "DecorationDescription": {
+    "decorationDescription": {
       "type": "string",
       "required": true
     },
-    "CoverImg": {
+    "coverImg": {
       "type": "component",
       "component": "shared.img",
       "repeatable": false,
       "required": true
     },
-    "HeaderSection": {
+    "headerSection": {
       "type": "component",
       "component": "shared.section",
       "repeatable": false,
       "required": true
     },
-    "blocks": {
+    "sections": {
       "type": "dynamiczone",
       "components": [
         "shared.section-with-image-on-left",

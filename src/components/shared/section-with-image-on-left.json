@@ -5,15 +5,15 @@
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Content": {
+    "content": {
       "type": "blocks",
       "required": true
     },
-    "ImagePlace": {
+    "imagePosition": {
       "type": "enumeration",
       "required": true,
       "enum": [
@@ -22,7 +22,7 @@
         "UnderTitle"
       ]
     },
-    "Image": {
+    "image": {
       "type": "component",
       "component": "shared.img",
       "repeatable": false,

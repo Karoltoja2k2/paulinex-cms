@@ -5,11 +5,11 @@
   },
   "options": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true
     },
-    "Content": {
+    "content": {
       "type": "blocks",
       "required": true
     }
