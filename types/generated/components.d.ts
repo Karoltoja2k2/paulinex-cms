@@ -1,75 +1,63 @@
-import type { Struct, Schema } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface SharedSlider extends Struct.ComponentSchema {
-  collectionName: 'components_shared_sliders';
+export interface SharedImg extends Struct.ComponentSchema {
+  collectionName: 'components_shared_imgs';
   info: {
-    displayName: 'Slider';
-    icon: 'address-book';
-    description: '';
+    displayName: 'Img';
   };
   attributes: {
-    files: Schema.Attribute.Media<'images', true>;
-  };
-}
-
-export interface SharedSeo extends Struct.ComponentSchema {
-  collectionName: 'components_shared_seos';
-  info: {
-    name: 'Seo';
-    icon: 'allergies';
-    displayName: 'Seo';
-    description: '';
-  };
-  attributes: {
-    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
-    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
-    shareImage: Schema.Attribute.Media<'images'>;
+    Alt: Schema.Attribute.String & Schema.Attribute.Required;
+    Img: Schema.Attribute.Media<'images' | 'files'> & Schema.Attribute.Required;
   };
 }
 
 export interface SharedRichText extends Struct.ComponentSchema {
   collectionName: 'components_shared_rich_texts';
   info: {
+    description: '';
     displayName: 'Rich text';
     icon: 'align-justify';
-    description: '';
   };
   attributes: {
-    body: Schema.Attribute.RichText;
+    body: Schema.Attribute.RichText & Schema.Attribute.Required;
   };
 }
 
-export interface SharedQuote extends Struct.ComponentSchema {
-  collectionName: 'components_shared_quotes';
+export interface SharedSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sections';
   info: {
-    displayName: 'Quote';
-    icon: 'indent';
+    displayName: 'Section';
   };
   attributes: {
-    title: Schema.Attribute.String;
-    body: Schema.Attribute.Text;
+    Content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface SharedMedia extends Struct.ComponentSchema {
-  collectionName: 'components_shared_media';
+export interface SharedSectionWithImageOnLeft extends Struct.ComponentSchema {
+  collectionName: 'components_shared_section_with_image_on_lefts';
   info: {
-    displayName: 'Media';
-    icon: 'file-video';
+    displayName: 'SectionWithImage';
   };
   attributes: {
-    file: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
+    Content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    Image: Schema.Attribute.Component<'shared.img', false> &
+      Schema.Attribute.Required;
+    ImagePlace: Schema.Attribute.Enumeration<
+      ['LeftSide', 'RightSide', 'UnderTitle']
+    > &
+      Schema.Attribute.Required;
+    Title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
-      'shared.slider': SharedSlider;
-      'shared.seo': SharedSeo;
+      'shared.img': SharedImg;
       'shared.rich-text': SharedRichText;
-      'shared.quote': SharedQuote;
-      'shared.media': SharedMedia;
+      'shared.section': SharedSection;
+      'shared.section-with-image-on-left': SharedSectionWithImageOnLeft;
     }
   }
 }

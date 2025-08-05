@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_imgs",
+  "info": {
+    "displayName": "Img"
+  },
+  "options": {},
+  "attributes": {
+    "Img": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Alt": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

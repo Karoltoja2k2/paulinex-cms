@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_shared_section_with_image_on_lefts",
+  "info": {
+    "displayName": "SectionWithImage"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Content": {
+      "type": "blocks",
+      "required": true
+    },
+    "ImagePlace": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "LeftSide",
+        "RightSide",
+        "UnderTitle"
+      ]
+    },
+    "Image": {
+      "type": "component",
+      "component": "shared.img",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

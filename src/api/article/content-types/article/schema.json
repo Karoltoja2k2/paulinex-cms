@@ -12,38 +12,47 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text",
-      "maxLength": 80
-    },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "required": true
     },
-    "cover": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": ["images", "files", "videos"]
+    "DecorationTitle": {
+      "type": "string",
+      "required": true
     },
-    "author": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::author.author",
-      "inversedBy": "articles"
+    "MetaTitle": {
+      "type": "string",
+      "maxLength": 60,
+      "required": true
     },
-    "category": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::category.category",
-      "inversedBy": "articles"
+    "MetaDescription": {
+      "type": "string",
+      "maxLength": 159,
+      "required": true
+    },
+    "DecorationDescription": {
+      "type": "string",
+      "required": true
+    },
+    "CoverImg": {
+      "type": "component",
+      "component": "shared.img",
+      "repeatable": false,
+      "required": true
+    },
+    "HeaderSection": {
+      "type": "component",
+      "component": "shared.section",
+      "repeatable": false,
+      "required": true
     },
     "blocks": {
       "type": "dynamiczone",
-      "components": ["shared.media", "shared.quote", "shared.rich-text", "shared.slider"]
+      "components": [
+        "shared.section-with-image-on-left",
+        "shared.section"
+      ],
+      "required": true
     }
   }
 }
