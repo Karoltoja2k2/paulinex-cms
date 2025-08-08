@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services",
+  "info": {
+    "singularName": "service",
+    "pluralName": "services",
+    "displayName": "Service"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "uid",
+      "required": true
+    },
+    "seoTitle": {
+      "type": "string",
+      "required": true
+    },
+    "decorationTitle": {
+      "type": "string",
+      "required": true
+    },
+    "metaTitle": {
+      "type": "string",
+      "maxLength": 60,
+      "required": true,
+      "unique": false
+    },
+    "seoDescription": {
+      "type": "blocks"
+    },
+    "decorationDescription": {
+      "type": "text",
+      "required": true
+    },
+    "metaDescription": {
+      "type": "text",
+      "maxLength": 159,
+      "required": true
+    },
+    "icon": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "services": {
+      "type": "blocks",
+      "required": true
+    },
+    "sections": {
+      "type": "component",
+      "component": "shared.section",
+      "repeatable": true
+    }
+  }
+}
