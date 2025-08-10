@@ -15,6 +15,17 @@
       "type": "uid",
       "required": true
     },
+    "mainService": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "order": {
+      "type": "integer",
+      "required": true,
+      "unique": true,
+      "min": 0
+    },
     "seoTitle": {
       "type": "string",
       "required": true
