@@ -31,6 +31,11 @@
         "above",
         "under"
       ]
+    },
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   },
   "config": {}

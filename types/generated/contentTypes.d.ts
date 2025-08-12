@@ -394,6 +394,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
     decorationTitle: Schema.Attribute.String & Schema.Attribute.Required;
     headerSection: Schema.Attribute.Component<'shared.section', false> &
       Schema.Attribute.Required;
+    inviteText: Schema.Attribute.Blocks & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

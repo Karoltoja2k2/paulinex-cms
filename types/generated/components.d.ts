@@ -19,6 +19,9 @@ export interface SharedSection extends Struct.ComponentSchema {
   };
   attributes: {
     content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    identifier: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -30,6 +33,9 @@ export interface SharedSectionWithImage extends Struct.ComponentSchema {
   };
   attributes: {
     content: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    identifier: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     imagePosition: Schema.Attribute.Enumeration<

@@ -12,6 +12,11 @@
     "content": {
       "type": "blocks",
       "required": true
+    },
+    "identifier": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   },
   "config": {}
