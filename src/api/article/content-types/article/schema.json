@@ -60,6 +60,11 @@
     "inviteText": {
       "type": "blocks",
       "required": true
+    },
+    "faq": {
+      "type": "component",
+      "component": "shared.section",
+      "repeatable": true
     }
   }
 }

@@ -392,6 +392,7 @@ export interface ApiArticleArticle extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     decorationDescription: Schema.Attribute.String & Schema.Attribute.Required;
     decorationTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    faq: Schema.Attribute.Component<'shared.section', true>;
     headerSection: Schema.Attribute.Component<'shared.section', false> &
       Schema.Attribute.Required;
     inviteText: Schema.Attribute.Blocks & Schema.Attribute.Required;
